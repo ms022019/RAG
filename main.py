@@ -5,7 +5,7 @@ from langchain.memory import ConversationBufferWindowMemory
 from langchain_core.prompts import MessagesPlaceholder, ChatPromptTemplate
 from langchain_core.runnables import RunnableConfig
 from langchain_community.callbacks import StreamlitCallbackHandler
-
+import os
 # models
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
@@ -15,7 +15,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from tools.search_ddg import search_ddg
 from tools.fetch_page import fetch_page
 
-
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 CUSTOM_SYSTEM_PROMPT = """
 あなたは、ユーザーのリクエストに基づいてインターネットで調べ物を行うアシスタントです。
