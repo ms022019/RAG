@@ -55,8 +55,10 @@ def select_model():
         return 1 , ChatOpenAI(
             temperature=0, model_name="gpt-4o")
     elif model == "にゃん音楽家":
-        return 2 , ChatGoogleGenerativeAI(
-            temperature=0, model="gemini-1.5-pro-latest")
+        return 2 , ChatOpenAI(
+            temperature=0, model_name="gpt-4o")
+        #ChatGoogleGenerativeAI(
+        #    temperature=0, model="gemini-1.5-pro-latest")
 
 
 def create_agent():
