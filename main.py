@@ -62,7 +62,7 @@ def select_model():
             #ChatGoogleGenerativeAI(
             #    temperature=0, model="gemini-1.5-pro-latest")
     else :
-        return 1 , 1
+        return 1 , 2
 
 
 def create_agent():
