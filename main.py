@@ -38,7 +38,7 @@ def init_page():
         page_title="必要なら検索するよ！",
         page_icon="🐈"
     )
-    st.image(img,width=100)
+    st.image(img,width=200)
     st.header("必要なら検索するよ！ 🐈")
     st.sidebar.title("お好きなにゃんこいますか？")
 
