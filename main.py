@@ -61,7 +61,7 @@ def init_page():
 
 
 def init_messages():
-    clear_button = st.sidebar.button("Clear Conversation", key="clear")
+    clear_button = st.sidebar.button("Initialize!!", key="clear")
     if clear_button or "messages" not in st.session_state:
         st.session_state.messages = [
             {"role": "assistant", "content": "こんにちは！なんでも質問をどうぞ！"}
@@ -79,19 +79,13 @@ def init_messages():
 
 
 def select_model():
-    models = ("GPT-4", "Claude 3.5 Sonnet", "Gemini 1.5 Pro", "GPT-3.5 (not recommended)")
+    models = ("にゃんこ博士","にゃん音楽家")
     model = st.sidebar.radio("Choose a model:", models)
-    if model == "GPT-3.5 (not recommended)":
-        return ChatOpenAI(
-            temperature=0, model_name="gpt-3.5-turbo")
-    elif model == "GPT-4":
-        return ChatOpenAI(
+    if model == "にゃんこ博士":
+        return 1 , ChatOpenAI(
             temperature=0, model_name="gpt-4o")
-    elif model == "Claude 3.5 Sonnet":
-        return ChatAnthropic(
-            temperature=0, model_name="claude-3-5-sonnet-20240620")
-    elif model == "Gemini 1.5 Pro":
-        return ChatGoogleGenerativeAI(
+    elif model == "にゃん音楽家":
+        return 2 , ChatGoogleGenerativeAI(
             temperature=0, model="gemini-1.5-pro-latest")
 
 
