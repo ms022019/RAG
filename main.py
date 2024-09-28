@@ -53,15 +53,15 @@ CUSTOM_SYSTEM_PROMPT = """
 
 def init_page():
     st.set_page_config(
-        page_title="Web Browsing Agent",
-        page_icon="🤗"
+        page_title="必要なら検索するよ！",
+        page_icon="🐈"
     )
-    st.header("Web Browsing Agent 🤗")
-    st.sidebar.title("Options")
+    st.header("必要なら検索するよ！ 🐈")
+    st.sidebar.title("お好きなにゃんこいますか？")
 
 
 def init_messages():
-    clear_button = st.sidebar.button("Initialize!!", key="clear")
+    clear_button = st.sidebar.button("すべて忘れる！, key="clear")
     if clear_button or "messages" not in st.session_state:
         st.session_state.messages = [
             {"role": "assistant", "content": "こんにちは！なんでも質問をどうぞ！"}
@@ -82,10 +82,10 @@ def select_model():
     models = ("にゃんこ博士","にゃん音楽家")
     model = st.sidebar.radio("にゃんこ選んでね:", models)
     if model == "にゃんこ博士":
-        return 1 , ChatOpenAI(
+        return ChatOpenAI(
             temperature=0, model_name="gpt-4o")
     elif model == "にゃん音楽家":
-        return 2 , ChatGoogleGenerativeAI(
+        return ChatGoogleGenerativeAI(
             temperature=0, model="gemini-1.5-pro-latest")
 
 
