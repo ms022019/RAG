@@ -26,7 +26,7 @@ from PIL import Image
 
 def init_page():
     # 画像ファイルのパス
-    img_path = "/workspaces/RAG/saito_neko.jpg"
+    img_path = "./saito_neko.jpg"
 
     # 画像を読み込む
     img = Image.open(img_path)
