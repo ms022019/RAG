@@ -32,12 +32,13 @@ def init_page():
     img = Image.open(img_path)
 
     # 画像を表示
-    st.image(img)
+
 
     st.set_page_config(
         page_title="必要なら検索するよ！",
         page_icon="🐈"
     )
+    st.image(img)
     st.header("必要なら検索するよ！ 🐈")
     st.sidebar.title("お好きなにゃんこいますか？")
 
