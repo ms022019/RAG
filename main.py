@@ -61,7 +61,7 @@ def init_page():
 
 
 def init_messages():
-    clear_button = st.sidebar.button("すべて忘れる！, key="clear")
+    clear_button = st.sidebar.button("すべて忘れる！", key="clear")
     if clear_button or "messages" not in st.session_state:
         st.session_state.messages = [
             {"role": "assistant", "content": "こんにちは！なんでも質問をどうぞ！"}
