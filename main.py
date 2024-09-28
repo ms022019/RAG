@@ -158,7 +158,7 @@ def main():
     for msg in st.session_state['memory'].chat_memory.messages:
         st.chat_message(msg.type).write(msg.content)
 
-    if prompt := st.chat_input(placeholder="2023 FIFA 女子ワールドカップの優勝国は？"):
+    if prompt := st.chat_input(placeholder="猫が走ると時速何キロ？"):
         st.chat_message("user").write(prompt)
 
         with st.chat_message("assistant"):
