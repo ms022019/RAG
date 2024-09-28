@@ -49,7 +49,7 @@ def init_messages():
         )
 
 def select_model():
-    models = ("にゃんこ博士","にゃん音楽家","ごろにゃん")
+    models = ("にゃんこ博士","にゃん音楽家","ごろにゃん","プラダにゃん")
     model = st.sidebar.radio("にゃんこ選んでね:", models)
     password = st.sidebar.text_input("あいことにゃ!", type="password")
     if password == "haruka" :
