@@ -32,7 +32,7 @@ def init_page():
     img = Image.open(img_path)
 
     # 画像を表示
-    # st.image(img)
+    st.image(img,width=100)
 
     st.set_page_config(
         page_title="必要なら検索するよ！",
