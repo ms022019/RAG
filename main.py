@@ -51,14 +51,18 @@ def init_messages():
 def select_model():
     models = ("にゃんこ博士","にゃん音楽家")
     model = st.sidebar.radio("にゃんこ選んでね:", models)
-    if model == "にゃんこ博士":
-        return 1 , ChatOpenAI(
-            temperature=0, model_name="gpt-4o")
-    elif model == "にゃん音楽家":
-        return 2 , ChatOpenAI(
-            temperature=0, model_name="gpt-4o")
-        #ChatGoogleGenerativeAI(
-        #    temperature=0, model="gemini-1.5-pro-latest")
+    password = st.sidebar.text_input("あいことにゃ!", type="password")
+    if password == "haruka" :
+        if model == "にゃんこ博士":
+            return 1 , ChatOpenAI(
+                temperature=0, model_name="gpt-4o")
+        elif model == "にゃん音楽家":
+            return 2 , ChatOpenAI(
+                temperature=0, model_name="gpt-4o")
+            #ChatGoogleGenerativeAI(
+            #    temperature=0, model="gemini-1.5-pro-latest")
+    else :
+        return 1 , 1
 
 
 def create_agent():
@@ -97,7 +101,7 @@ def create_agent():
         回答の最後には、参照したページのURLを**必ず**記載してください。（これにより、ユーザーは回答を検証することができます）
 
         ユーザーが使用している言語で回答するようにしてください。
-        ユーザーが日本語で質問した場合は、日本語で回答してください。ユーザーがスペイン語で質問した場合は、スペイン語で回答してください。
+        ユーザーが日本語で質問した場合は、日本語で回答してください。
         """
     else :
         CUSTOM_SYSTEM_PROMPT = """
@@ -131,7 +135,7 @@ def create_agent():
         回答の最後には、参照したページのURLを**必ず**記載してください。（これにより、ユーザーは回答を検証することができます）
 
         ユーザーが使用している言語で回答するようにしてください。
-        ユーザーが日本語で質問した場合は、日本語で回答してください。ユーザーがスペイン語で質問した場合は、スペイン語で回答してください。
+        ユーザーが日本語で質問した場合は、日本語で回答してください。
         """
 
     prompt = ChatPromptTemplate.from_messages([
