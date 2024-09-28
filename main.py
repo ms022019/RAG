@@ -18,10 +18,22 @@ from tools.fetch_page import fetch_page
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+import streamlit as st
+from PIL import Image
+
 
 
 
 def init_page():
+    # 画像ファイルのパス
+    img_path = "/workspaces/RAG/saito_neko.jpg"
+
+    # 画像を読み込む
+    img = Image.open(img_path)
+
+    # 画像を表示
+    # st.image(img)
+
     st.set_page_config(
         page_title="必要なら検索するよ！",
         page_icon="🐈"
