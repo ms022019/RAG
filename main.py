@@ -80,7 +80,7 @@ def init_messages():
 
 def select_model():
     models = ("にゃんこ博士","にゃん音楽家")
-    model = st.sidebar.radio("Choose a model:", models)
+    model = st.sidebar.radio("にゃんこ選んでね:", models)
     if model == "にゃんこ博士":
         return 1 , ChatOpenAI(
             temperature=0, model_name="gpt-4o")
