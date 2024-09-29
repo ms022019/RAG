@@ -54,7 +54,6 @@ def select_model():
     password = st.sidebar.text_input("あいことにゃ!", type="password")
     if password == "haruka" :
         if model == "にゃんこ博士":
-            st.image(img,width=200)
             return 1 , ChatOpenAI(
                 temperature=0, model_name="gpt-4o")
         elif model == "にゃん音楽家":
