@@ -17,7 +17,7 @@ from tools.fetch_page import fetch_page
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-current = -1
+
 import streamlit as st
 from PIL import Image
 
@@ -54,16 +54,7 @@ def select_model():
     password = st.sidebar.text_input("あいことにゃ!", type="password")
     if password == "haruka" :
         if model == "にゃんこ博士":
-            if current != 1:
-                st.session_state.messages = [
-                {"role": "assistant", "content": "こんにちは！なんでも質問をどうぞ！"}
-                ]
-                st.session_state['memory'] = ConversationBufferWindowMemory(
-                return_messages=True,
-                memory_key="chat_history",
-                k=10
-                )
-            current = 1
+            st.image(img,width=200)
             return 1 , ChatOpenAI(
                 temperature=0, model_name="gpt-4o")
         elif model == "にゃん音楽家":
