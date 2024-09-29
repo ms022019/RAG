@@ -7,7 +7,7 @@ def init_page():
         page_icon="🧐"
     )
 
-
+ 
 def main():
     init_page()
 
